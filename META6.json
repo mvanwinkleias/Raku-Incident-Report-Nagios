@@ -1,0 +1,21 @@
+{
+    "perl" : "6.c",
+    "name" : "Incident::Report::Nagios",
+    "api"  : "1",
+    "auth" : "github:mvanwinkleias",
+    "version" : "0.0.1",
+    "description" : "Creates Nagios Plugin Output.",
+    "authors" : [ "Martin VanWinkle III" ],
+    "license" : "Artistic-2.0",
+    "provides" : {
+        "Incident::Report::Nagios" : "lib/Incident::Report::Nagios"
+    },
+    "depends" : [ ],
+    "build-depends" : [ ],
+    "test-depends" : [ ],
+    "resources" : [ ],
+    "tags": [
+      "Incident", "Report", "Nagios"
+    ],
+    "source-url" : "git://github.com/mvanwinkleias/Raku-Incident-Report-Nagios.git"
+}
