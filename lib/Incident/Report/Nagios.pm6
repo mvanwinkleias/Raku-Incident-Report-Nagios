@@ -171,7 +171,7 @@ I might need to examine this for better tables: https://docs.perl6.org/language/
 sub test_basic_things
 {
 
-	my $nagios_report = edu::ias::net::Incident::Report::Nagios.new();
+	my $nagios_report = Incident::Report::Nagios.new();
 
 	# $nagios_report.long_output().push("Something");
 	$nagios_report.service_name = "TEST_SERVICE";
@@ -189,7 +189,7 @@ sub test_basic_things
 	return $nagios_report;
 }
 
-sub test_more_things (edu::ias::net::Incident::Report::Nagios $nagios_report)
+sub test_more_things (Incident::Report::Nagios $nagios_report)
 {
 	# say $nagios_report.perl();
 
@@ -246,7 +246,7 @@ Even then, this is not "well defined", but we'll try to mimic it.
 
 sub mimic_nagios_plugin_guideline_output
 {
-	my $nagios_report = edu::ias::net::Incident::Report::Nagios.new();
+	my $nagios_report = Incident::Report::Nagios.new();
 	$nagios_report.service_name = "SERVICE";
 
 	$nagios_report.service_status("OK");
