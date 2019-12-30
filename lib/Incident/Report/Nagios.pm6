@@ -1,5 +1,31 @@
 #!/usr/bin/perl6
 
+=begin pod
+
+=head1 NAME
+
+Incident::Report::Nagios - Creates Nagios plugin output
+
+=head1 SYNOPSIS
+
+=begin code
+use Incident::Report::Nagios;
+my $nagios_report = Incident::Report::Nagios.new(
+	service_name = "Some_service",
+);
+
+...
+=end code
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=head2 method some_method
+    method some_method() returns Some::Thing
+    
+=end pod
+
 # See this:
 # https://design.raku.org/S11.html#Versioning
 # you can have yuor Incident::Report::Nagios:auth<user.university>, I can have my Incident::Report::Nagios:auth<tadzik> and it's all fine :)
