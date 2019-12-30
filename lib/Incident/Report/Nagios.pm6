@@ -11,19 +11,27 @@ Incident::Report::Nagios - Creates Nagios plugin output
 =begin code
 use Incident::Report::Nagios;
 my $nagios_report = Incident::Report::Nagios.new(
-	service_name = "Some_service",
+	service_name => "Some_service",
 );
 
-...
+$nagios_report.short_output = "First line of output";
+$nagios_report.add_long_output(
+	"Any number of subsequent lines of output, "
+		~ "but note that buffers"
+);
+$nagios_report.add_long_output("may have a limited size");
+
+$nagios_report.add_performance_data("First part of performance data");
+$nagios_report.add_performance_data("Second part of performance data, which");
+$nagios_report.add_performance_data("may have continuation lines, too");
+say $nagios_report.construct_report();
+
 =end code
 
 =head1 DESCRIPTION
 
 =head1 METHODS
 
-=head2 method some_method
-    method some_method() returns Some::Thing
-    
 =end pod
 
 # See this:
@@ -60,10 +68,10 @@ class Incident::Report::Nagios
 	}
 =begin pod
 
-=head1 Service Status Transition Table
+=head2 method bump_service_status
+    method bump_service_status() returns Str
 
-bump_service_status is supposed to implement the following status
-transition table:
+Implements the following status transition table:
 
 =begin table
 Old State | In State  | New State
